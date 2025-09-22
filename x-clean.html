@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X - Clean Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1d9bf0;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: #71767b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: #fff;
+        }
+
+        .post {
+            padding: 16px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #333;
+            flex-shrink: 0;
+        }
+
+        .post-content {
+            flex: 1;
+        }
+
+        .username {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .handle {
+            color: #71767b;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .text {
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 12px;
+            word-wrap: break-word;
+        }
+
+        .actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: #71767b;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn:hover {
+            color: #1d9bf0;
+        }
+
+        .action-btn.liked {
+            color: #f91880;
+        }
+
+        .action-btn.liked:hover {
+            color: #f91880;
+        }
+
+        .compose {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: #1d9bf0;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(29, 155, 240, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .compose:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 16px 0;
+            }
+            
+            .nav {
+                gap: 16px;
+            }
+            
+            .post {
+                padding: 12px 0;
+                gap: 8px;
+            }
+            
+            .avatar {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">X</div>
+            <nav class="nav">
+                <a href="#">หน้าแรก</a>
+                <a href="#">สำรวจ</a>
+                <a href="#">การแจ้งเตือน</a>
+                <a href="#">ข้อความ</a>
+                <a href="#">โปรไฟล์</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="post">
+                <div class="avatar"></div>
+                <div class="post-content">
+                    <div class="username">Grok</div>
+                    <div class="handle">@grok</div>
+                    <div class="text">
+                        สร้างหน้าเว็บที่สะอาดและเรียบง่ายด้วย HTML/CSS ที่มินิมอล เน้นการใช้งานที่ลื่นไหลและประสบการณ์ผู้ใช้ที่ดีที่สุด
+                    </div>
+                    <div class="actions">
+                        <button class="action-btn" title="ตอบกลับ">↩️</button>
+                        <button class="action-btn" title="รีโพสต์">🔄</button>
+                        <button class="action-btn liked" title="ชอบ">❤️</button>
+                        <button class="action-btn" title="แชร์">📤</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="avatar"></div>
+                <div class="post-content">
+                    <div class="username">xAI</div>
+                    <div class="handle">@xai</div>
+                    <div class="text">
+                        xAI มุ่งมั่นในการสร้างปัญญาประดิษฐ์ที่ช่วยมนุษยชาติเข้าใจจักรวาลได้ลึกซึ้งยิ่งขึ้น
+                    </div>
+                    <div class="actions">
+                        <button class="action-btn" title="ตอบกลับ">↩️</button>
+                        <button class="action-btn" title="รีโพสต์">🔄</button>
+                        <button class="action-btn" title="ชอบ">❤️</button>
+                        <button class="action-btn" title="แชร์">📤</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="avatar"></div>
+                <div class="post-content">
+                    <div class="username">Elon Musk</div>
+                    <div class="handle">@elonmusk</div>
+                    <div class="text">
+                        การออกแบบที่ดีคือการออกแบบที่เรียบง่าย สะอาด และใช้งานได้จริง
+                    </div>
+                    <div class="actions">
+                        <button class="action-btn" title="ตอบกลับ">↩️</button>
+                        <button class="action-btn" title="รีโพสต์">🔄</button>
+                        <button class="action-btn liked" title="ชอบ">❤️</button>
+                        <button class="action-btn" title="แชร์">📤</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <button class="compose" title="เขียนโพสต์">+</button>
+</body>
+</html>
